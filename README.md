@@ -228,6 +228,8 @@ plt.show()
 
 ### Result
 
+![Descriptive Alt Text](visual_represntation/whiskers_plot.png)
+
 The resulting plot shows:
 
 - The **box** between Q1 and Q3
