@@ -228,7 +228,7 @@ plt.show()
 
 ### Result
 
-![Descriptive Alt Text](visual_represntation/whiskers_plot.png)
+![Descriptive Alt Text](visual_representation/whiskers_plot.png)
 
 The resulting plot shows:
 
