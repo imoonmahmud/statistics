@@ -1,5 +1,6 @@
 import numpy as np
 
+# ----- Calculate Frequency and Relative Frequency -----
 def count_frequency(nums: list) -> list:
     sorted_data = sorted(nums)
     values = []
@@ -23,12 +24,20 @@ def rel_freq(frequencies: list) -> list:
         rel_freq.append(round(frequency/total, 2))
     return rel_freq
 
-nums = [2,5,3,4,7,2,5,8,3,2,2,3,2,5,5,4,8,5,2,8]
-values, frequency = count_frequency(nums)
-print(rel_freq(frequency))
+def cr_freq(rel_freq: list) -> list:
+    cumlative_freq = [rel_freq[0]]
+
+    try:
+        for i in range(len(rel_freq)):
+            cumlative_freq.append(
+                round(cumlative_freq[i] + rel_freq[i+1], 2))
+    except IndexError:
+        pass
+    return cumlative_freq
 
 
 # Calulate relative frequency using NumPy
 nums = np.array([2,5,3,4,7,2,5,8,3,2,2,3,2,5,5,4,8,5,2,8])
 values, frequency = np.unique(nums, return_counts=True)
 relative_frequency = list(map(lambda x: round(x, 2),frequency / np.sum(frequency)))
+cumulative_rel_frequencies = np.cumsum(relative_frequency)
